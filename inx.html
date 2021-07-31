@@ -1,76 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
-<HTML lang="en" class="no-js no-touch-events ">
-<head>
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,wridiv:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
-<meta http-equiv="Content-Language" content="en" />
-<title>MoHobbies | Your Ticket to Sports, Concerts &amp; More</title>
-<meta name="robots" content="index, follow" />
-<link rel="shortcut icon" href="/favicon.png" />
-<link rel="apple-touch-icon" href="/images/mobile-app/iosIcon.png">
-<link rel="preload" href="/fonts/ProximaNova-Regular.5a18309afad2627a18d330d35965394d.woff2" as="font" corigin="anonymous" />
-<link rel="preload" href="/fonts/ProximaNova-Medium.e1621c64c35065affd16b94f9a001209.woff2" as="font" crossorigin="anonymous" />
-<link rel="preload" href="/fonts/ProximaNova-Semibold.b6c6379af2c0f9ae8eff2a869327ab44.woff2" as="font" crossorigin="anonymous" />
-<link rel="preload" href="/fonts/ProximaNova-Bold.59aef9c2427a09b6d486df74f2dc48aa.woff2" as="font" crossorigin="anonymous" />
-<style id="desktop-font-faces">@font-face{font-family:Gilroy;src:url(/fonts/Gilroy-ExtraBold.461389af05a8bacbddfc454b1a37d13f.woff2) format("woff2"),url(/fonts/Gilroy-ExtraBold.ed9369d259ad81fdea9a3c57664ef9bb.woff) format("woff"),url(/fonts/Gilroy-ExtraBold.989ae01f4501bbca061c027c3ef0c6b2.ttf) format("truetype");font-weight:800;font-style:normal;font-display:swap}@font-face{font-family:Gilroy;src:url(/fonts/Gilroy-Bold.1a5dd85347586c2a7b816e3cc978a359.woff2) format("woff2"),url(/fonts/Gilroy-Bold.684a49ee4b5c19cbcc54c811ca741758.woff) format("woff"),url(/fonts/Gilroy-Bold.1f4e5ee5976cc79194e1041640c46b51.ttf) format("truetype");font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:Gilroy;src:url(/fonts/Gilroy-SemiBold.afa134c4b170119e4dfc0f2afcd96a6d.woff2) format("woff2"),url(/fonts/Gilroy-SemiBold.5d717f1fe2e78013e7b45512d0bd14cc.woff) format("woff"),url(/fonts/Gilroy-SemiBold.0e8f288d4c29ffb1957801d058c7a641.ttf) format("truetype");font-weight:600;font-style:normal;font-display:swap}@font-face{font-family:proxima-nova;src:url(/fonts/ProximaNova-Bold.59aef9c2427a09b6d486df74f2dc48aa.woff2) format("woff2"),url(/fonts/ProximaNova-Bold.94ccc32371ab216b72fc40d4fd75a793.woff) format("woff"),url(/fonts/ProximaNova-Bold.231ef664bacf0ac0f992b5a8692254b5.ttf) format("truetype");font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:proxima-nova;src:url(/fonts/ProximaNova-Semibold.b6c6379af2c0f9ae8eff2a869327ab44.woff2) format("woff2"),url(/fonts/ProximaNova-Semibold.43a98d530bc33a1a5a381bb120bd89b3.woff) format("woff"),url(/fonts/ProximaNova-Semibold.f714042cbaf4617b6295b9841b4295b9.ttf) format("truetype");font-weight:600;font-style:normal;font-display:fallback}@font-face{font-family:proxima-nova;src:url(/fonts/ProximaNova-Medium.e1621c64c35065affd16b94f9a001209.woff2) format("woff2"),url(/fonts/ProximaNova-Medium.da43056013f4d458dba81c32870f71ac.woff) format("woff"),url(/fonts/ProximaNova-Medium.e74d2c6dfd0305e314e4d7e9335411e1.ttf) format("truetype");font-weight:500;font-style:normal;font-display:fallback}@font-face{font-family:proxima-nova;src:url(/fonts/ProximaNova-Regular.5a18309afad2627a18d330d35965394d.woff2) format("woff2"),url(/fonts/ProximaNova-Regular.6a3247b1907e170becbf954e35a32db4.woff) format("woff"),url(/fonts/ProximaNova-Regular.e2e7eabdf1328c9f07da9a721af1c56c.ttf) format("truetype");font-weight:400;font-style:normal;font-display:fallback}
-</style>            
-<link rel="stylesheet" type="text/css" href="/css/bundle_desktop_pages_e58fe5084917bc1f38e4.css" />
-
-<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE" />
-<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1" />
-<META HTTP-EQUIV="imagetoolbar" CONTENT="no">
-
-<META NAME="DESCRIPTION" content="World largest free social, hobby web site for activity logging, Online dating, chat, romance, personal ads, love, friendship." />
-<META NAME="KEYWORDS" content="free online dating site,free membership,free chat, online dating, adult dating,find a date, find a friend, relationships,personal ads,singles,single woman,single man,,christian singles, black singles, asian singles, jewish singles, local singles, woman seeking man,men seeking women,singles,love,romance for male and female, adult chat, live video" />
-<META NAME="TYPE" CONTENT="" />
-<META NAME="COPYRIGHT" CONTENT="Copyright " />
-<META NAME="ROBOTS" CONTENT="index,follow" />
-<META NAME="REVISIT-AFTER" CONTENT="7 days" />
-<META NAME="RATING" CONTENT="General" />
-<META NAME="RESOURCE-TYPE" CONTENT="document" />
-<META NAME="DISTRIBUTION" CONTENT="global" />
-<title>mohobbies.com - free dating & socializing website</title>
-<style type="text/css"> 
-td        {color:#000000; font-size:11px;
-font-family:arial,helvetica,sans-serif;}
-select    {font-size:11px;}
-form      {margin:0px;}
-input     {font: 11px Arial,Helvetica,sans-serif;}
-#rnav     {color:#FECB00; text-decoration:none}
-#option   {color:#666666;}
-#entrance {color:#FFFFFF;}
-#note     {font-size:9px;}
-#rfooter  {color:#330000; text-decoration:none}
-#info     {color:#999999;}
-#topnav   {color:#666666; text-decoration:none}
-#pop      {font-weight: bold;}
-#menutopnav   {color:#000000; text-decoration:none; font-weight: bold;}
-#nmenutopnav   {color:#ffffff; text-decoration:none; font-weight: bold;}
-#whitenav  {color:#ffffff; text-decoration:none;
-font-family:verdana,arial,helvetica,sans-serif; font-weight: bold; font-size:10px;}
-#plainnav  {color:#ffffff; text-decoration:none;
-font-family:verdana,arial,helvetica,sans-serif; font-weight: plain; font-size:10px;}
-#sidenavitem  {font-weight: bold; color:#990000; text-decoration:none; font-family: Verdana,Arial,Helvetica,sans-serif; font-size:9px}
-#blacksidenavitem  {font-weight: bold; color:#000000; text-decoration:none; font-family: Verdana,Arial,Helvetica,sans-serif; font-size:9px}
-.contest  {color:#ffffff; font-size:10px;
-font-family:arial,helvetica,sans-serif;}
+<!DOCTYPE html>
+<html>
+<title>MOHOBBIES</title>
+<meta charset="UTF-8">
+<!--meta name="viewport" content="width=device-width, initial-scale=1"-->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6{font-family: "Raleway", sans-serif}
+/*@media screen and (max-device-width: 450px) {
+		#container { width: 100%; margin: 0; padding: 25px 0;}
+		div { display: block; width:auto;}
+		td  { display: block; padding: 5px 0; border: none; }
+		div img { display: block; margin: 0; width: auto;}
+}
+img{ width: 100%; height: auto;}*/
 </style>
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
-/* Button used to open the contact form - fixed at the bottom of the page */
-.open-button { 
-  color: #ffffff;
-  padding: 10px 10px 10px 10px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.5;
-  position: relative;
-  bottom: 10px;
-  right: 25px;
-  width: 70px;
-}
 /* The popup form - hidden by default */
 .form-popup {
   display: none;
@@ -118,7 +64,27 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+/* {
+  box-sizing: border-box;
+}*/	
+@media screen and (max-width: 480px) {
+  .column {
+    float:left;
+    width: 100%;
+  }
+}
+.column {
+  float: block;
+  padding: 10px;
+  height: auto; /* Should be removed. Only for demonstration */
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 </style>
+
 <script language="javascript">
 <!--
 var timeID = null;
@@ -136,247 +102,254 @@ function beforeUnLoad() {
   top.location.href = "/all/close.jsp"
 }
 //-->
-</script>
-</head>
+</script>		
+<body class="w3-light-grey w3-content" style="max-width:1600px;overflow-x:auto;">
 
-<body style="margin: 0pt" leftmargin="0" rightmargin="0" topmargin="0" marginheight="0" marginwidth="0" class="layout-new home layout-transparent-header">
-<div cellspacing="0" cellpadding="0" border="0" width='100%' style="background:linear-gradient(blue, blue);display:block;float:left;overflow-x:auto;">
-<tr>
-<td rowspan=2><!--img src="images/smallelove.jpg" width=0 alt="LOGO"--><span style="padding-left:50px;width:50%;font-weight:bold;font-size:39;color:red;font-family:Comic Sans MS;Cursive;Lobster;sans-serif;">MoHobbies</span></td>
+<!-- !PAGE CONTENT! -->
+<div id="container" class="w3-main">
 
-<td width=83 height=18 align=left style="display:block;float:left;overflow-x:auto;">
-<div cellspacing=20 cellpadding=20 border=0 width=83>
-<tr>
-
-<td align=center valign=middle width=90 height=18 bgcolor="#2222cc">
-<div cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=80 height=16 bgcolor="#2222cc"  class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="/search.do" target="ContentFrame">SEARCH</a></td></tr>
-
-<tr><td valign=top height=1 align=center><img src="images/redbottom.jpg" height="1" width=80></td></tr>
-</div>
-<td width=2 height=10 valign=middle><img src="images/deepred_separator.gif" width=1 height=10></td>
-</div>
-</td>
-
-<td width=2><img src="images/deepred_separator.gif" width=1 height=10></td>
-<td width=85 height=18>
-<div cellspacing=0 cellpadding=0 border=0 width=85>
-<tr><td height=18 align=right valign=center bgcolor="#2222cc" rowspan=2 width=1></td>
-<td align=center valign=middle width=100 height=18 bgcolor="#2222cc">
-<div cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=100 height=16 bgcolor="#2222cc"  class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="/viewevent.do" target="ContentFrame">CONNECTIONS</a></td></tr>
-<tr><td valign=top height=1 width=95 align=center align=center><img src="images/redbottom.jpg" height="1" width=80></td></tr>
-</div>
-<td valign=center align=left bgcolor="#2222cc" height=18 width=2 rowspan=2></td>
-</div>
-</td> 
-<td width=2/>
-<td width=85 height=18>
-<div cellspacing=0 cellpadding=0 border=0 width=85>
-<tr><td height=18 align=right valign=center bgcolor="#2222cc" rowspan=2 width=1></td>
-<td align=center valign=middle width=90 height=18 bgcolor="#2222cc">
-<div cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=80 height=16 bgcolor="#2222cc"  class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="" target="ContentFrame">EMAILS</a></td></tr>
-<tr><td valign=top height=1 width=85 align=center align=center><img src="images/redbottom.jpg" height="1" width=80></td></tr>
-</div>
-<td valign=center align=left bgcolor="#2222cc" height=18 width=2 rowspan=2></td>
-</div>
-</td>   
-
-<td width=2><img src="" width=1 height=15></td>
-<td width=85 height=18>
-<div cellspacing=0 cellpadding=0 border=0 width=85>
-<tr><td height=18 align=right valign=center bgcolor="#2222cc" rowspan=2 width=1></td>
-<td align=center valign=middle width=90 height=18 bgcolor="#2222cc">
-<div cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=80 height=16 bgcolor="#2222cc"  class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="/allSearch.do?method=getBlogs" target="ContentFrame">BLOGS</a></td></tr>
-<tr><td valign=top height=1 width=85 align=center align=center><img src="images/redbottom.jpg" height="1" width=80></td></tr>
-</div>
-<td valign=center align=left bgcolor="#2222cc" height=18 width=2 rowspan=2></td>
-</div>
-</td>  
-
-<td width=2><img src="" width=1 height=15></td>
-
-<td width=85 height=18>
-<div cellspacing=0 cellpadding=0 border=0 width=85>
-<tr><td height=18 align=right valign=center bgcolor="#2222cc" rowspan=2 width=1></td>
-<td align=center valign=middle width=90 height=18 bgcolor="#2222cc">
-<div cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=80 height=16 bgcolor="#2222cc"  class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="" target="ContentFrame">GROUPS</a></td></tr>
-<tr><td valign=top height=1 width=85 align=center align=center><img src="images/redbottom.jpg" height="1" width=80></td></tr>
-</div>
-<td valign=center align=left bgcolor="#2222cc" height=18 width=2 rowspan=2></td>
-</div>
-</td>  
-
-<td width=2><img src="" width=1 height=15></td>
-<td width=85 height=18>
-<div cellspacing=0 cellpadding=0 border=0 width=85>
-<tr><td height=18 align=right valign=center bgcolor="#2222cc" rowspan=2 width=1></td>
-<td align=center valign=middle width=90 height=18 bgcolor="#2222cc">
-<div cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=110 height=16 bgcolor="#2222cc"  class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="#" target="ContentFrame">MOBILE CHAT</a></td></tr>
-<tr><td valign=top height=1 width=85 align=center align=center><img src="images/redbottom.jpg" height="1" width=110></td></tr>
-</div>
-<td valign=center align=left bgcolor="#2222cc" height=18 width=2 rowspan=2></td>
-</div>
-</td>  
-
-<td width=2><img src="" width=1 height=15></td>
-
-<td width=84 height=18>
-<div cellspacing=0 cellpadding=0 border=0 width=84>
-<tr><td height=18 align=right valign=center bgcolor="#2222cc" rowspan=2 width=5></td>
-<td align=center valign=middle width=65 height=18 bgcolor="#2222cc">
-<div cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=130 height=16 bgcolor="#2222cc" class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="#" target="ContentFrame">MOBILE VIDEO</a></td></tr>
-<tr><td valign=top height=1 align=center ><img src="images/redbottom.jpg" height="1" width=130></td></tr>
-</div>
-<td valign=left align=left bgcolor="#2222cc" height=18 width=5 rowspan=2></td>
-</div>
-</td>
-<td width=2><img src="" width=1 height=15></td>
-<td width=84 height=18>
-<div cellspacing=0 cellpadding=0 border=0 width=84>
-<tr><td height=18 align=right valign=center bgcolor="#2222cc" rowspan=2 width=5></td>
-<td align=center valign=middle width=65 height=18 bgcolor="#2222cc">
-<div cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=80 height=16 bgcolor="#2222cc" class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="/texting.do" target="ContentFrame">TEXTING</a></td></tr>
-<tr><td valign=top height=1 align=center ><img src="images/redbottom.jpg" height="1" width=100></td></tr>
-</div>
-<td valign=left align=left bgcolor="#2222cc" height=18 width=5 rowspan=2></td>
-</div>
-</td>
-<td valign=left align=left width=2 rowspan=2></td>
-<td width=84 height=18>
-<div cellspacing=0 cellpadding=0 border=0 width=84>
-<tr><td height=18 align=right valign=center bgcolor="#2222cc" rowspan=2 width=5></td>
-<td align=center valign=middle width=65 height=18 bgcolor="#2222cc">
-<div cellspacing=0 cellpadding=0 border=0><tr><td align=center valign=middle width=80 height=16 bgcolor="#2222cc" class="off" onmouseover="this.className='on'" onmouseout="this.className='off'"><a id="plainnav" href="#" target="ContentFrame">EVENTS</a></td></tr>
-<tr><td valign=top height=1 align=center><img src="images/redbottom.jpg" height="1" width=100></td></tr>
-</div>
-<td valign=left align=left bgcolor="#2222cc" height=18 width=5 rowspan=2></td>
-</div>
-</td>
-</tr>
-<tr>
-</tr>
-</div>
-<center>
-<div width="100%" align='right' style="background-color:orange;padding-bottom:2px;"><a href="#" style="font-size: 13px;color:red;font-weight:bold;padding-left:20px;padding-right:20px;padding-bottom:50px;background-color:#2222cc;" onClick='openForm("subscribeForm");return false;'>Register</a></span>&nbsp;&nbsp;&nbsp;<button style="background-color:orange;width:85px;border:1px solid #000000;font-weight:bold;color:#000;"><div onclick="openForm('loginForm')">Login</div></button>&nbsp;&nbsp;&nbsp;</div>
-<div class="topEvents-1009dac3">
-<h1 class="locationSelector-1efcc601">Popular Events Near <span class="locationSelector-16138739">Los Angeles, CA</h1>
-<div class="topEvents-40dbb4d2"><a class="topEvents-391fd280" href=""><img class="topEvents-36f458be" src="" alt="" /></a></div>
-</div>
-<div style="padding-left:50px;" cellspacing='50'><tr>
-<td class="topEvents-47bdd8a4">
-<div class="topEvents-8fe4c237">
-<div class="LazyLoad is-visible"><a href="http://bit.ly/2PgsLJV"><img src="infected-mushroom-live-dj-set-.jpg" alt="" width="300" /></a></div>
-</div>
-<div class="event-ddd28673">
-<div class="event-1ac55de3">SAT</div>
-<div class="event-7b7e02d5">21</div>
-<div class="event-aa84ecb2">DEC</div>
-</div>
-<div class="event-db06d0e3">
-<h2 class="event-ded13d73"><a href="http://bit.ly/2PgsLJV"></a></h2>
-	<div class="event-0d021c26"><a href="https://www.tixr.com/pr/NAWANG/15853">Downtown LA</a></div>
-</td>
-<td class="topEvents-8fe4c237">
-<div class="LazyLoad is-visible"><img src="party-favor.png" alt="" width="300"/></div>
-</div>
-<div class="event-ddd28673">
-<div class="event-1ac55de3">SAT</div>
-<div class="event-7b7e02d5">11</div>
-<div class="event-aa84ecb2">Jan</div>
-</div>
-<div class="event-db06d0e3">
-<h2 class="event-ded13d73"><a href="http://bit.ly/2PgsLJV">Two Dates</a></h2>
-<div class="event-0d021c26">Downtown LA Location</div>
-</td>
-<td class="topEvents-8fe4c237" style="display:block;">
-
-<div class="LazyLoad is-visible"><a href="http://bit.ly/2PgsLJV"><img src="jason-ross.jpg" alt="" width="300"/></a></div>
-</div>
-<div class="event-ddd28673">
-<div class="event-1ac55de3">SAT</div>
-<div class="event-7b7e02d5">29</div>
-<div class="event-aa84ecb2">FEB</div>
-</div>
-<div class="event-db06d0e3">
-<h2 class="event-ded13d73"><a href=""></a></h2>
-<div class="event-0d021c26">Hollywood</div>
-</td></tr>
-
-<tr>
-<td class="topEvents-8fe4c237">
-<div class="LazyLoad is-visible"><a href="https://vor.us/a42d7"><img src="Benzi.png" alt="" width="300"/></a></div>
-</div>
-<div class="event-ddd28673">
-<div class="event-1ac55de3">Friday</div>
-<div class="event-7b7e02d5">20</div>
-<div class="event-aa84ecb2">DEC</div>
-</div>
-<div class="event-db06d0e3">
-<h2 class="event-ded13d73"><a href="http://bit.ly/2PgsLJV"></a></h2>
-  <div class="event-0d021c26"><a href="https://www.tixr.com/pr/NAWANG/15851">Hollywood Location</a></div>
-</td>
-<td class="topEvents-8fe4c237">
-<div class="LazyLoad is-visible"><a href="https://vor.us/a42d7"><img src="markus.jpg" alt="" width="300"/></a></div>
-</div>
-<div class="event-ddd28673">
-<div class="event-1ac55de3">TUES</div>
-<div class="event-7b7e02d5">31</div>
-<div class="event-aa84ecb2">DEC</div>
-</div>
-<div class="event-db06d0e3">
-<h2 class="event-ded13d73"><a href="https://vor.us/a42d7">Hollywood</a></h2>
-</div>
-</td>
-<td class="topEvents-8fe4c237">
-<div class="LazyLoad is-visible"><a href="https://vor.us/a42d7"><img src="hernan.png" alt="" width="300"/></a></div>
-</div>
-<div class="event-ddd28673">
-<div class="event-1ac55de3">SAT</div>
-<div class="event-7b7e02d5">21</div>
-<div class="event-aa84ecb2">DEC</div>
-</div>
-<div class="event-db06d0e3">
-<h2 class="event-ded13d73"><a href="https://vor.us/a42d7">Hollywood</a></h2>
-</div>
-</td>
-</tr>
-</div>
-</center>
-<div border=0 cellpadding=0 cellspacing=0 bgcolor="#ff7000" width="100%" height=10>
-<tr><td width="100%">
-<div width='100%' align='center' style="font-size:12px;"><tr><td>
-<td width=50><a href="https://www.facebook.com/Mohobbies/"><img src="/image/facebook.png" height=20></a></td>
-<td width=80><a href="https://www.twitter.com/Mohobbies/"><img src="/image/twitter.png" width=20></a></td>
-<td width=80><a href="/aboutus.do" id="rfooter">About Us</a>
-</td>
-<td width=1><img src="images/deepred_separator.gif" width=1 height=10></td>
-<td width=80 align=center><a href="/contactus.do" id="rfooter">Contact Us</a></td>
-<td width=1><img src="images/deepred_separator.gif" width=1 height=10></td>
-<td width=80 align=center><a href="/support.do" id="rfooter">Support</a></td>
-
-<td width=1><img src="images/deepred_separator.gif" width=1 height=10></td>
-<td align=center width=100><a href="/termsofuse.do" id="rfooter">Terms of Use</a></td>
-<td width=1><img src="images/deepred_separator.gif" width=1 height=10></td>
-<td align=center width=80><a href="/help.do" id="rfooter">Help</a></td>
-<td width=1><img src="images/deepred_separator.gif" width=1 height=10></td>
-<td align=center width=60>
-<a href="/legal.do" id="rfooter">&nbsp;&nbsp;Legal</a>
-</td>
-<td style="width:30%;" align="right">copyright © MoHobbies.com&nbsp;&nbsp;</td>
-</tr>
-</div>
-</td>
-</tr>
+  <!-- Header -->
+  <header id="portfolio">
+    <a href="#"><img src="" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+	  <div class="w3-container"><div style="float:right;padding-right:10px;"><a href="#" onClick="openForm('loginForm');return flase;">LOGIN</a></div>
+		  <h1><b>Similar Hobbies</b></h1>	<div style="float:right;padding-top:32px;padding-right:10px;"><a href="#" onclick="openForm('subscribeForm');return false;">REGISTER</a></div>
+    <div class="w3-section w3-bottombar w3-padding-16"  style="background-color:orange;">
+      <span class="w3-margin-right">&nbsp;&nbsp;Filter:</span> 
+      <button class="w3-button w3-black">ALL</button>
+      <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>SEARCH</button>
+      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>EVENTS</button>
+      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>CHAT</button>
+    </div>
+    <div style="text-align:center;font-weight:bold;font-size:25px;">Popular Events in Los Angeles</div>
+    </div>
+  </header>
+  
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding" style="background-color:blue;height:30;width:100%;">
+    <div class="w3-container w3-margin-bottom>
+      <!--img src="" alt="" style="width:100%;height:1;" class="w3-hover-opacity"-->
+      <div class="column">
+        <p><b>Morten</b></p>
+        <p><a href="https://www.tixr.com/pr/NAWANG/17147"><img src="morten.jpg" alt=""/></a></p>
+      </div>
+    </div>
+    <div class="w3-container w3-margin-bottom row">
+      <!--img src="" alt="" style="width:100%;height:1;" class="w3-hover-opacity"-->
+      <div class="column">
+        <p><b>Jason Ross</b></p>
+        <p><a href="http://bit.ly/2PgsLJV"><img src="jason-ross.jpg" alt=""/></a></p>
+      </div>
+    </div>
+    <div class="w3-container row">
+      <!--img src="" alt="" style="width:100%;height:1;" class="w3-hover-opacity"-->
+      <div class="column">
+        <p><b>Alex</b></p>
+        <p><a href="https://vor.us/a42d7"><img src="alex.jpg" alt=""/></a></p>
+      </div>
+    </div>
+  </div>
+  <div style="background-color:#dddddd">&nbsp;</div>
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding" style="background-color:blue;height:30;width:100%;">
+    <div class="w3-container w3-margin-bottom">
+      <!--img src="" alt="" style="width:100%;height:1;" class="w3-hover-opacity"-->
+      <div class="column">
+        <p><b>Bijou</b></p>
+        <p><a href="https://www.tixr.com/pr/NAWANG/17192"><img src="bijou.jpg" alt=""/></a></p>
+      </div>
+    </div>
+    <div class="w3-container w3-margin-bottom row">
+      <!--img src="" alt="" style="width:100%;height:1;" class="w3-hover-opacity"-->
+      <div class="column">
+        <p><b>Mitis</b></p>
+        <p><a href="http://bit.ly/2PgsLJV"><img src="mitis-at-time-nightclub.jpg" alt=""/></a></p>
+      </div>
+    </div>
+    <div class="w3-container w3-margin-botton row">
+      <!--img src="" alt="" style="width:100%;height:1;" class="w3-hover-opacity"-->
+      <div class="column">
+        <p><b>Party Favor</b></p>
+	      <p><a href="https://www.tixr.com/pr/NAWANG/15984"><img src="party-favor.png" alt=""/></a></p>
+      </div>
+    </div>
+  </div>
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
+  <!-- 
+  <div class="w3-row-padding w3-padding-16" id="about">
+    <div class="w3-col m6">
+      <img src="/w3images/avatar_g.jpg" alt="Me" style="width:100%">
+    </div>
+    <div class="w3-col m6">
+      <img src="/w3images/me2.jpg" alt="Me" style="width:100%">
+    </div>
+  </div>
+  <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+    <h4><b>Follow US</b></h4>
+    <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+    <hr>
+    
+    <h4>Technical Skills</h4>
+    <p>Photography</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:95%">95%</div>
+    </div>
+    <p>Web Design</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:85%">85%</div>
+    </div>
+    <p>Photoshop</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:80%">80%</div>
+    </div>
+    <p>
+      <button class="w3-button w3-dark-grey w3-padding-large w3-margin-top w3-margin-bottom">
+        <i class="fa fa-download w3-margin-right"></i>Download Resume
+      </button>
+    </p>
+    <hr>
+    
+    <h4>How much I charge</h4>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">1GB Storage</li>
+          <li class="w3-padding-16">Mail Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 10</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-teal w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-teal w3-xlarge w3-padding-32">Pro</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">50GB Storage</li>
+          <li class="w3-padding-16">Endless Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 25</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-teal w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="w3-third">
+        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-black w3-xlarge w3-padding-32">Premium</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">Unlimited Storage</li>
+          <li class="w3-padding-16">Endless Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 25</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-teal w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+-->
+  <div class="w3-container w3-padding-large w3-grey">
+    <h4 id="contact"><b>Follow Us: http://instagram.com/mohobbies</b></h4>
+    <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
+      <div class="w3-third w3-dark-grey">
+        <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
+        <p>contact@mohobbies.com</p>
+      </div>
+      <div class="w3-third w3-teal">
+        <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
+        <p>Los Angeles, US</p>
+      </div>
+      <div class="w3-third w3-dark-grey">
+        <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
+        <p>3233645911</p>
+      </div>
+    </div>
+    <hr class="w3-opacity">
+    <form action="/action_page.php" target="_blank">
+      <div class="w3-section">
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">
+        <label>Email</label>
+        <input class="w3-input w3-border" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">
+        <label>Message</label>
+        <input class="w3-input w3-border" type="text" name="Message" required>
+      </div>
+      <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
+    </form>
+  </div>
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-32 w3-light-grey">
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <h3>FOOTER</h3>
+	    <p><a href="./privacy.html">Privacy</a></p>
+	    <p><a href="./privacy.html">Terms of Use</a></p>
+    </div>
+  
+    <div class="w3-third">
+      <h3></h3>
+      <ul class="w3-ul w3-hoverable">
+        <li class="w3-padding-16">
+          <a href="http://facebook.com/mohobbies"><img src="./image/facebook.png" class="w3-left w3-margin-right" style="width:45px;"></a>
+          <span class="w3-small">Become a social publisher</span><br>
+          <span></span>
+        </li>
+        <li class="w3-padding-16">
+          <a href="http://twitter.com/mohobbies"><img src="./image/twitter.png" class="w3-left w3-margin-right" style="width:45px;"></a>
+          <span class="w3-small">Get reward by tweeting</span><br>
+          <span></span>
+        </li>
+        <!--li class="w3-padding-16">&nbsp;&nbsp;
+          <a href="http://twitter.com/mohobbies">&nbsp;&nbsp;&nbsp;&nbsp;<img src="./image/twitter.png" class="w3-left w3-margin-right" style="width:25px;"></a>
+          <span class="w3-small">Post to your audience</span><br>
+          <span></span>
+        </li--> 
+      </ul>
+    </div>
+  </div>
+  </footer>
+  
+  <div class="w3-black w3-center w3-padding-24">Copyright © MoHobbies.com 2020</div>
+<!-- End page content -->
 </div>
 <div class="form-popup" id="loginForm">
-  <form name="loginForm" action="/j_security_check" method="post" class="form-container">
+  <form name="signinForm" action="/j_security_check" method="post" class="form-container">
     <h1>Login</h1>
-
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="j_username" id="j_username" required>
-
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="j_password" id="j_password" required>
-
     <button type="submit" class="btn">Login</button>
     <button type="button" class="btn cancel" onclick="closeForm('loginForm')">Close</button>
   </form>
@@ -385,29 +358,40 @@ function beforeUnLoad() {
   <form name="registersForm" action="http://mr4.biz/registers.go" method="post">
     <h1>Subscribe</h1>
 	<div><input id="registers" name="registers" type="hidden" value='1'/></div>
-	<label for="email"><b>Full Name</b></label>
+	<label for="email"><b></b></label>
     <input type="text" placeholder="First Name" name="firstname" id="firstname" required>
     <input type="text" placeholder="Last Name" name="lastname" id="lastname" required>
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" id="email" required>
-
     <label for="cellphone"><b>Cellphone Number</b></label>
     <input type="text" placeholder="Enter Cellphone Number" name="phonenum" id="phonenum" required>
 	
     <label for="psw"><b>Pin(5 digits)</b></label>
     <input type="password" placeholder="Enter Password" name="passcode" id="password" type="password" required>
-
     <button type="submit" class="btn">Submit</button>
     <button type="button" class="btn cancel" onclick="closeForm('subscribeForm')">Close</button>
   </form>
 	<div>&nbsp;</div>
 </div>
 <script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
 function openForm(form) {
   document.getElementById(form).style.display = "block";//console.log('form'+form);
 }
 function closeForm(form) {
   document.getElementById(form).style.display = "none";
 }
+	
 </script>
 </body>
+</html>
+
