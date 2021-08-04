@@ -47,7 +47,7 @@ leftmargin=0 rightmargin=0 marginwidth=0 marginheight=0>
 <tr><td height=50 width='270' style="background-color:orange;padding-left:30px;font-weight:bold;font-size:25px;"><!--img src="/image/txt p.png"--><i>Mohobbies</i>
 </td></tr>
 </table>
-</center>
+
 <table width="670">
 <tr>
 <td width="665" align='center' valign=top height="3">
@@ -74,7 +74,7 @@ Us&quot; link at the bottom of the our Web site pages.</p>
  
 </tr> 
 </table>
-
+</center>
 <table width="670" height="15"> 
 <!--tr><td height="17" valign="middle" align="center" width="667"><font size="1">Copyright @ 2019 MoHobbies.com. All Rights Reserved.</font></td></tr--> 
 </BODY>
